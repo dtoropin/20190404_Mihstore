@@ -1,0 +1,29 @@
+.menu
+	&__list
+		display: flex
+	&__item
+		color: #1d1d1d
+		&.active .menu__link
+			color: #f02b63
+			&::after
+				content: ''
+	&__link
+		position: relative
+		display: block
+		padding: 10px 41.7px 12px 34px
+		border-bottom: 5px solid #f02b63
+		letter-spacing: .4px
+		&::after
+			display: block
+			position: absolute
+			bottom: 0
+			left: 38%
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 10px 9px 10px
+			border-color: transparent transparent #f02b63 transparent
+		&:hover
+			color: #f02b63
+			&::after
+				content: ''

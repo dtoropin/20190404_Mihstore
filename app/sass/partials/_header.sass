@@ -1,0 +1,33 @@
+.header
+	&-top
+		background: $bg_block
+		padding: 18px 36px 17px 32px
+		display: flex
+		justify-content: center
+		color: #ababab
+		font-size: +em(14px)
+		&__text
+			flex-grow: 1
+		&__link
+			display: flex
+			text-transform: uppercase
+			&-item
+				margin-left: 28px
+				&:first-child
+					margin-left: 0
+				&.active
+					color: #4cb1ca
+			&-anchor:hover,
+			&-anchor:active
+				color: #4cb1ca
+	&-center
+		padding: 76px 2px 65px 34px
+		display: flex
+		justify-content: center
+		align-items: center
+	&-bottom
+		background: $bg_block
+		display: flex
+		justify-content: center
+		font-size: +em(18px)
+		text-transform: uppercase
