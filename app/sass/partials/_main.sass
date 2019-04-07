@@ -1,0 +1,62 @@
+.main
+	&-head
+		padding: 15px 0 17px 33px
+		letter-spacing: .3px
+		display: flex
+		font-size: +em(18px)
+		text-transform: uppercase
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			bottom: -11px
+			right: 285px
+			display: inline-block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 21px 20px 0 20px
+			border-color: #e3ebed transparent transparent transparent
+			z-index: 2
+		&__title
+			width: 125px
+			color: #4cb1ca
+			border-right: 2px solid #4cb1ca
+			margin-right: 35px
+		&__description
+			letter-spacing: 0
+	&-content
+		position: relative
+		padding: 34px	23px 42px 17px
+		background: $bg_block
+		&::after
+			content: ''
+			position: absolute
+			bottom: 0
+			right: 0
+			display: inline-block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 42px 45px 0 0
+			border-color: #4cb1ca transparent transparent transparent
+		&::before
+			content: ''
+			position: absolute
+			bottom: 0
+			right: 0
+			display: inline-block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 0 45px 45px
+			border-color: transparent transparent #e3ebed transparent
+		& > div
+			display: flex
+		&-left
+			width: 680px
+			padding-right: 10px
+			box-sizing: border-box
+		&-right
+			width: 282px
+			box-sizing: border-box

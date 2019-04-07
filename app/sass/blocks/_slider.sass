@@ -1,0 +1,70 @@
+.slider
+	background: url(../img/bg-slider.jpg)
+	height: 310px
+	&__item
+		position: relative
+		padding-top: 36px
+		outline: none
+	&__title
+		position: absolute
+		top: 4px
+		right: 226px
+		transform: rotate(-10deg)
+		width: 160px
+		height: 160px
+		background: #1d1d1d
+		border-radius: 50%
+		z-index: 5
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		font-style: italic
+		&-top
+			text-transform: capitalize
+			font-size: +em(32px)
+			line-height: .5
+			color: #ffffff
+		&-center
+			text-transform: uppercase
+			font-size: +em(38px)
+			color: #ffffff
+		&-bottom
+			text-transform: uppercase
+			font-size: +em(16px)
+			line-height: .3
+			color: #f02b63
+	&__link
+		position: relative
+		text-align: right
+		text-transform: uppercase
+		font-size: +em(18px)
+		letter-spacing: -1.5px
+		color: #1d1d1d
+		font-weight: bold
+		margin-bottom: 10px
+		margin-right: 38px
+		cursor: pointer
+		&-text
+			border-top: 2px solid #1d1d1d
+			border-bottom: 2px solid #1d1d1d
+			&::after
+				position: absolute
+				right: -15px
+				top: -8px
+				font-size: +em(18px)
+				content: '\25b8'
+	&__foto
+		position: relative
+		&--left
+			width: 348px
+			top: -52px
+			right: -15px
+			z-index: 2
+		&--right
+			width: 316px
+			top: -26px
+			right: 26px
+
+.slick-slide img
+	display: inline
