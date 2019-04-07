@@ -1,0 +1,23 @@
+.pagination
+	&__list
+		display: flex
+		justify-content: center
+	&__link
+		display: block
+		width: 28px
+		height: 28px
+		text-align: center
+		font-size: +em(18px)
+		line-height: 26px
+		color: #8f8f8f
+		border-radius: 50%
+		border: 1px solid transparent
+		&:hover
+			border: 1px solid #7db122
+	&__item
+		margin-left: 10px
+		&:first-child
+			margin-left: 0
+		&.active .pagination__link
+			color: white
+			background-color: #7db122

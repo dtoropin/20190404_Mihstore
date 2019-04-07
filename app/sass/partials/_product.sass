@@ -1,0 +1,48 @@
+.product
+	padding: 0 8px
+	display: grid
+	grid-template-rows: repeat(3, 1fr)
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: 20px
+	align-items: end
+	margin-bottom: 40px
+	&-card
+		position: relative
+		text-align: center
+		margin-bottom: 25px
+		&__img
+			margin-bottom: 10px
+		&__subscribe
+			background: #e8e8e8
+			color: #818181
+			font-size: +em(14px)
+			padding: 3px 18px
+			display: flex
+			justify-content: space-between
+		&__price
+			color: #f02b63
+		&::after
+			position: absolute
+			display: flex
+			justify-content: center
+			align-items: center
+			color: white
+			font-size: +em(19px)
+			width: 54px
+			height: 54px
+			border-radius: 50%
+		&--50::after
+			bottom: 42px
+			left: 23px
+			content: '-50%'
+			background-color: #7db122
+		&--30::after
+			bottom: 60px
+			left: 47px
+			content: '-30%'
+			background-color: #f02b63
+		&--20::after
+			top: 15px
+			right: 60px
+			content: '-20%'
+			background-color: #4cb1ca

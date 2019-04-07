@@ -1,4 +1,4 @@
-.main
+.content
 	&-head
 		padding: 15px 0 17px 33px
 		letter-spacing: .3px
@@ -25,7 +25,7 @@
 			margin-right: 35px
 		&__description
 			letter-spacing: 0
-	&-content
+	&-main
 		position: relative
 		padding: 34px	23px 42px 17px
 		background: $bg_block
@@ -53,10 +53,15 @@
 			border-color: transparent transparent #e3ebed transparent
 		& > div
 			display: flex
-		&-left
-			width: 680px
-			padding-right: 10px
-			box-sizing: border-box
-		&-right
-			width: 282px
-			box-sizing: border-box
+.main
+	width: 680px
+	padding-right: 10px
+	box-sizing: border-box
+	&-title
+		color: #7db122
+		font-size: +em(18px)
+		text-transform: uppercase
+		margin-bottom: 30px
+.aside
+	width: 282px
+	box-sizing: border-box

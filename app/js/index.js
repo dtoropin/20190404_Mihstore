@@ -12,7 +12,11 @@
 	};
 
 	var _setUpListners = function () {
-		// прослушка событий
+		$('.footer__top-link').on('click', _scrollToTop);
+	};
+
+	var _scrollToTop = function () {
+		$('body,html').animate({scrollTop: 0}, 500);
 	};
 
 	return init();
