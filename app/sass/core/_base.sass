@@ -4,12 +4,16 @@ html, body
 body
 	overflow-y: scroll
 	font-family: $base_font
-	font-size: 12px
+	font-size: $font_base
 	color: $text_color
 	background: $bg_color
 
+%block-bg
+	background: $bg_block
+
 .wrapper
 	width: $content_width
+	height: 100%
 	margin: 0 auto
 	display: flex
 	flex-direction: column

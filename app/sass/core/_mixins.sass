@@ -18,13 +18,12 @@
 	background-position: $sprite[2] $sprite[3]
 	background-image: url('../img/sprite/#{$sprite[8]}')
 
-@function em($target, $context: $font-size-base)
+@function em($target, $context: $font_base)
 	@if $target == 0
 		@return 0
 	@return $target / $context + 0em
 
-@function cp($target, $context: $center-width)
+@function cp($target, $context: $content_width)
 	@if $target == 0
 		@return 0
 	@return $target / $context * 100%
-	

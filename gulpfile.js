@@ -52,7 +52,6 @@ var config = {
 	server: {
 			baseDir: "./build"
 	},
-	tunnel: true,
 	host: 'localhost',
 	port: 9000,
 	browser: ['chrome']
@@ -104,7 +103,7 @@ gulp.task('style:build', function () {
 		.pipe(rename({ suffix: '.min', prefix: '' }))
 		.pipe(prefixer())
 		.pipe(gcmq())
-		.pipe(cssmin())
+		// .pipe(cssmin())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.build.css))
 		.pipe(reload({stream: true}));
