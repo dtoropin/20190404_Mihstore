@@ -1,0 +1,30 @@
+{
+	"item1": {
+		"img": "preview-1.png",
+		"name": "Product name here",
+		"discription": "Description Lorem ipsum sit am",
+		"price": "110",
+		"country": "US"
+	},
+	"item2": {
+		"img": "preview-2.png",
+		"name": "Product name here",
+		"discription": "Description Lorem ipsum sit am",
+		"price": "110",
+		"country": "US"
+	},
+	"item3": {
+		"img": "preview-1.png",
+		"name": "Product name here",
+		"discription": "Description Lorem ipsum sit am",
+		"price": "110",
+		"country": "US"
+	},
+	"item4": {
+		"img": "preview-2.png",
+		"name": "Product name here",
+		"discription": "Description Lorem ipsum sit am",
+		"price": "110",
+		"country": "US"
+	}
+}

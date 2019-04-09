@@ -2,6 +2,7 @@
 
 	var init = function () {
 		_getProductJSON();
+		_getBestsellersJSON();
 		_setUpListners();
 		$('.slider').slick({
 			infinite: true,
@@ -25,6 +26,12 @@
 		});
 	};
 
+	var _getBestsellersJSON = function () {
+		$.getJSON('../data/bestsellers.json').done(function (response) {
+			_showBestsellers(response);
+		});
+	};
+
 	var _showProducts = function (data) {
 		var template = $('#templateProduct').html(),
 			tag = $('#product'),
@@ -35,6 +42,23 @@
 				name: product.name,
 				price: Number(product.price).toFixed(2),
 				discont: product.discont !== 'false' ? 'product-card--' + product.discont : ''
+			};
+			return html += templayed(template)(prod);
+		});
+		tag.append(html);
+	};
+
+	var _showBestsellers = function (data) {
+		var template = $('#templateBestsellers').html(),
+			tag = $('#bestsellers'),
+			html = '';
+		$.each(data, function (i, product) {
+			var prod = {
+				img: product.img,
+				name: product.name,
+				price: product.price,
+				discription: product.discription,
+				country: product.country
 			};
 			return html += templayed(template)(prod);
 		});

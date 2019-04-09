@@ -27,6 +27,7 @@ var path = {
 		css: 'build/css/',
 		img: 'build/img/',
 		fonts: 'build/fonts/',
+		data: 'build/data/',
 		sprite: 'build/img/sprite/'
 	},
 	src: {
@@ -36,6 +37,7 @@ var path = {
 		style: 'app/sass/*.sass',
 		img: 'app/img/**/*.*',
 		fonts: 'app/fonts/**/*.*',
+		data: 'app/data/*.json',
 		sprite: 'app/img/sprite/*.*'
 	},
 	watch: {
@@ -43,7 +45,8 @@ var path = {
 		js: 'app/js/**/*.js',
 		style: 'app/sass/**/*.sass',
 		img: 'app/img/**/*.*',
-		fonts: 'app/fonts/**/*.*'
+		fonts: 'app/fonts/**/*.*',
+		data: 'app/data/*.json'
 	},
 	clean: './build'
 };
@@ -59,8 +62,9 @@ var config = {
 
 // data
 gulp.task('data:build', function () {
-	return gulp.src('app/data/products.json')
+	return gulp.src('app/data/*.json')
 		.pipe(gulp.dest('build/data/'))
+		.pipe(reload({ stream: true }));
 });
 
 // html
@@ -171,6 +175,7 @@ gulp.task('watch', function () {
 	watch([path.watch.js], gulp.series('js:build'));
 	watch([path.watch.img], gulp.series('image:build'));
 	watch([path.watch.fonts], gulp.series('fonts:build'));
+	watch([path.watch.data], gulp.series('data:build'));
 });
 
 // server
