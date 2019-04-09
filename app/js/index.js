@@ -1,7 +1,7 @@
 (function () {
 
 	var init = function () {
-		console.log('It is myModule other!');
+		_getProductJSON();
 		_setUpListners();
 		$('.slider').slick({
 			infinite: true,
@@ -16,7 +16,29 @@
 	};
 
 	var _scrollToTop = function () {
-		$('body,html').animate({scrollTop: 0}, 500);
+		$('body,html').animate({ scrollTop: 0 }, 500);
+	};
+
+	var _getProductJSON = function () {
+		$.getJSON('../data/products.json').done(function (response) {
+			_showProducts(response);
+		});
+	};
+
+	var _showProducts = function (data) {
+		var template = $('#templateProduct').html(),
+			tag = $('#product'),
+			html = '';
+		$.each(data, function (i, product) {
+			var prod = {
+				img: product.img,
+				name: product.name,
+				price: Number(product.price).toFixed(2),
+				discont: product.discont !== 'false' ? 'product-card--' + product.discont : ''
+			};
+			return html += templayed(template)(prod);
+		});
+		tag.append(html);
 	};
 
 	return init();

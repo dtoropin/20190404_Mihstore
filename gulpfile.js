@@ -22,47 +22,53 @@ var gulp = require('gulp'),
 
 var path = {
 	build: {
-			html: 'build/',
-			js: 'build/js/',
-			css: 'build/css/',
-			img: 'build/img/',
-			fonts: 'build/fonts/',
-			sprite: 'build/img/sprite/'
+		html: 'build/',
+		js: 'build/js/',
+		css: 'build/css/',
+		img: 'build/img/',
+		fonts: 'build/fonts/',
+		sprite: 'build/img/sprite/'
 	},
 	src: {
-			html: 'app/*.html',
-			js: 'app/js/[^vendor]*.js',
-			jsvendor: 'app/js/vendor.js',
-			style: 'app/sass/*.sass',
-			img: 'app/img/**/*.*',
-			fonts: 'app/fonts/**/*.*',
-			sprite: 'app/img/sprite/*.*'
+		html: 'app/*.html',
+		js: 'app/js/[^vendor]*.js',
+		jsvendor: 'app/js/vendor.js',
+		style: 'app/sass/*.sass',
+		img: 'app/img/**/*.*',
+		fonts: 'app/fonts/**/*.*',
+		sprite: 'app/img/sprite/*.*'
 	},
 	watch: {
-			html: 'app/**/*.html',
-			js: 'app/js/**/*.js',
-			style: 'app/sass/**/*.sass',
-			img: 'app/img/**/*.*',
-			fonts: 'app/fonts/**/*.*'
+		html: 'app/**/*.html',
+		js: 'app/js/**/*.js',
+		style: 'app/sass/**/*.sass',
+		img: 'app/img/**/*.*',
+		fonts: 'app/fonts/**/*.*'
 	},
 	clean: './build'
 };
 
 var config = {
 	server: {
-			baseDir: "./build"
+		baseDir: "./build"
 	},
 	host: 'localhost',
 	port: 9000,
 	browser: ['chrome']
 };
 
+// data
+gulp.task('data:build', function () {
+	return gulp.src('app/data/products.json')
+		.pipe(gulp.dest('build/data/'))
+});
+
 // html
 gulp.task('html:build', function () {
 	return gulp.src(path.src.html)
 		.pipe(rigger())
 		.pipe(gulp.dest(path.build.html))
-		.pipe(reload({stream: true}));
+		.pipe(reload({ stream: true }));
 });
 
 // js
@@ -78,7 +84,7 @@ gulp.task('js:build', function () {
 		}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.build.js))
-		.pipe(reload({stream: true}));
+		.pipe(reload({ stream: true }));
 });
 
 // js-vendor
@@ -92,7 +98,7 @@ gulp.task('jsvendor:build', function () {
 			}
 		}))
 		.pipe(gulp.dest(path.build.js))
-		.pipe(reload({stream: true}));
+		.pipe(reload({ stream: true }));
 });
 
 // styles
@@ -106,20 +112,20 @@ gulp.task('style:build', function () {
 		// .pipe(cssmin())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.build.css))
-		.pipe(reload({stream: true}));
+		.pipe(reload({ stream: true }));
 });
 
 // images
 gulp.task('image:build', function () {
 	return gulp.src(path.src.img)
 		.pipe(imagemin({
-				progressive: true,
-				svgoPlugins: [{removeViewBox: false}],
-				use: [pngquant()],
-				interlaced: true
+			progressive: true,
+			svgoPlugins: [{ removeViewBox: false }],
+			use: [pngquant()],
+			interlaced: true
 		}))
 		.pipe(gulp.dest(path.build.img)) //И бросим в build
-		.pipe(reload({stream: true}));
+		.pipe(reload({ stream: true }));
 });
 
 // ????????????????????????????
@@ -150,16 +156,16 @@ gulp.task('image:build', function () {
 // gulp.task('sprite', gulp.series('spritemade'));
 
 // fonts
-gulp.task('fonts:build', function() {
+gulp.task('fonts:build', function () {
 	return gulp.src(path.src.fonts)
 		.pipe(gulp.dest(path.build.fonts))
 });
 
 // build
-gulp.task('build', gulp.parallel('html:build', 'jsvendor:build', 'js:build', 'style:build', 'image:build', 'fonts:build'));
+gulp.task('build', gulp.parallel('data:build', 'html:build', 'jsvendor:build', 'js:build', 'style:build', 'image:build', 'fonts:build'));
 
 // watch
-gulp.task('watch', function(){
+gulp.task('watch', function () {
 	watch([path.watch.html], gulp.series('html:build'));
 	watch([path.watch.style], gulp.series('style:build'));
 	watch([path.watch.js], gulp.series('js:build'));

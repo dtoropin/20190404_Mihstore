@@ -1,0 +1,56 @@
+{
+	"prod1": {
+		"img": "preview-1.jpg",
+		"name": "Pure Slim Xe",
+		"price": "60",
+		"discont": "50"
+	},
+	"prod2": {
+		"img": "preview-2.jpg",
+		"name": "Pure Slim Xe",
+		"price": "55",
+		"discont": "30"
+	},
+	"prod3": {
+		"img": "preview-3.jpg",
+		"name": "Pure Slim Xe",
+		"price": "64",
+		"discont": "20"
+	},
+	"prod4": {
+		"img": "preview-4.jpg",
+		"name": "Pure Slim Xe",
+		"price": "40",
+		"discont": "false"
+	},
+	"prod5": {
+		"img": "preview-5.jpg",
+		"name": "Pure Slim Xe",
+		"price": "39",
+		"discont": "false"
+	},
+	"prod6": {
+		"img": "preview-6.jpg",
+		"name": "Pure Slim Xe",
+		"price": "69",
+		"discont": "20"
+	},
+	"prod7": {
+		"img": "preview-7.jpg",
+		"name": "Pure Slim Xe",
+		"price": "61",
+		"discont": "false"
+	},
+	"prod8": {
+		"img": "preview-8.jpg",
+		"name": "Pure Slim Xe",
+		"price": "77",
+		"discont": "false"
+	},
+	"prod9": {
+		"img": "preview-9.jpg",
+		"name": "Pure Slim Xe",
+		"price": "66",
+		"discont": "30"
+	}
+}
