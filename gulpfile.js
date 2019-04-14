@@ -79,14 +79,14 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
 	return gulp.src(path.src.js)
 		.pipe(rigger())
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(minify({
 			noSource: true,
 			ext: {
 				min: '.min.js'
 			}
 		}))
-		.pipe(sourcemaps.write('.'))
+		// .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({ stream: true }));
 });
@@ -108,13 +108,13 @@ gulp.task('jsvendor:build', function () {
 // styles
 gulp.task('style:build', function () {
 	return gulp.src(path.src.style)
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(sass({ outputStyle: 'expand' }).on("error", notify.onError()))
 		.pipe(rename({ suffix: '.min', prefix: '' }))
 		.pipe(prefixer())
 		.pipe(gcmq())
-		// .pipe(cssmin())
-		.pipe(sourcemaps.write('.'))
+		.pipe(cssmin())
+		// .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.build.css))
 		.pipe(reload({ stream: true }));
 });
@@ -128,7 +128,7 @@ gulp.task('image:build', function () {
 			use: [pngquant()],
 			interlaced: true
 		}))
-		.pipe(gulp.dest(path.build.img)) //И бросим в build
+		.pipe(gulp.dest(path.build.img))
 		.pipe(reload({ stream: true }));
 });
 
